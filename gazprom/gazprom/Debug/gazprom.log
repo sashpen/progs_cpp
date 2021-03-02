@@ -1,0 +1,3 @@
+﻿  gazprom.cpp
+C:\Users\User\source\repos\gazprom\gazprom\gazprom.cpp(773,2): error C2065: hgfjgfg: необъявленный идентификатор
+C:\Users\User\source\repos\gazprom\gazprom\gazprom.cpp(774,2): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "printf"
