@@ -689,7 +689,7 @@ for (int k = 0; k < 12; k++) {
 			}
 			Sum += x_i[i] / 100 * P0;
 		}
-		printf("Sum = %f\n", Sum);
+		//printf("Sum = %f\n", Sum);
 		for (int i = 0; i < N - 1; i++) {
 			for (int j = i + 1; j < N; j++) {
 				B0 = 0;
@@ -702,7 +702,7 @@ for (int k = 0; k < 12; k++) {
 				SSum += x_i[i] / 100 * x_i[j] / 100 * Psi[components[i]][components[j]] * B0;
 			}
 		}
-		printf("SSum = %f\n", SSum);
+		//printf("SSum = %f\n", SSum);
 		// A0 = Sum + SSum
 		// расчетный комплекс А1
 		for (int i = 0; i < N; i++) {
@@ -731,16 +731,18 @@ for (int k = 0; k < 12; k++) {
 		// A1 = Sum1 + SSum1
 		//
 		delta = (pi * z_cm / tau - (1 + Sum + SSum) * w) / (1 + Sum1 + SSum1);
-		printf("w = %.9f, delta = %.9f\n", w, delta);
+		//printf("w = %.9f, delta = %.9f\n", w, delta);
 		w = w + delta;
 		counter += 1;
 	} while (fabs(delta / w) > pow(10, -6));
+	
 	double rho;
 	rho = M / v_cm * w;
 	printf("rho = %f\n", rho);
 	printf("iterations = %d\n", counter);
 	double z;
-	//
+	///
+	/*
 	w = 401.6 * v_cm / M;
 	printf("w = %f\n", w);
 	Sum = 0.0;
@@ -771,6 +773,7 @@ for (int k = 0; k < 12; k++) {
 		}
 	}
 	printf("SSum = %f\n", SSum);
+	*/
 	//
 	z = 1 + Sum + SSum; // фактор сжимаемости (формула 35)
 	printf("compressibility factor = %f\n", z);
